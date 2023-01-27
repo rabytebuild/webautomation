@@ -1,0 +1,19 @@
+name: CI
+
+on: [push, workflow_dispatch]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Update
+
+      run: apt install git && apt install php7
+
+    - name: Start
+
+      run: git clone https://github.com/arpitgoswami/webautomation.git && cd webautomation && php script.php
